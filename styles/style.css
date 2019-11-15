@@ -2,57 +2,86 @@
 
 
 /* Start: Testing Outline */
-/* * > * {
+/* HTML > Body > Elem */
+/* * > * > * {
   border: solid 1px rgb(239, 111, 243);
 }
 
-* > * > * {
+* > * > * > * {
   border: solid 1px rgb(80, 236, 184);
 }
 
-* > * > * > * {
-  border: solid 1px tomato;
+* > * > * > * > * {
+  border: solid 1px rgb(255, 99, 71);
+}
+
+* > * > * > * > * > * {
+  border: solid 1px rgb(107, 142, 35);
 } */
 /* End: Testing Outline */
 
-* {
-  box-sizing: border-box;
+/* Variables */
+:root {
+  --background-color: hsl(43, 18%, 92%);
+  --text-color__primary: hsl(0, 0%, 11%);
+
+  --font-size__title: 2.5rem;
+  --font-size__subtitle: 1.5rem;
+
+  --font-family__headings: 'Overpass', sans-serif;
+  --font-family__body: 'Overpass', sans-serif;
+}
+
+/* Dark mode: modifies variable values */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(0, 0%, 11%);
+    --text-color__primary: hsl(43, 17%, 82%);
+  }
+}
+
+/* For large screens */
+@media (min-width: 900px) {
+  :root {
+    --font-size__title: 4rem;
+    --font-size__subtitle: 2.5rem;
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
 
-  min-height: 100vh;
-  vertical-align: top;
+  background-color: var(--background-color);
+  color: var(--text-color__primary);
 
-  background-color: #EFEDE8;
-  color: rgb(29, 29, 29);
-  font-family: 'Overpass', sans-serif;
+  font-family: var(--font-family__headings);
 }
 
 .wrapper {
-  height: 100%;
   margin: 0;
   padding: 0;
 
-  min-height: inherit;
-  vertical-align: top;
+  min-height: 100vh;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-#my-info--name {
+.my-info__name {
   margin: 0;
-  font-size: 2rem;
+  
+  font-size: var(--font-size__title);
   text-align: center;
 }
 
-#my-info--email {
+.my-info__email {
   margin: 0;
-  font-size: 1.25rem;
+
+  font-size: var(--font-size__subtitle);
+  line-height: 1.33;
   text-align: center;
 }
