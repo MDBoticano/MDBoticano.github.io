@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
 
-
 /* Start: Testing Outline */
 /* HTML > Body > Elem */
-/* * > * > * {
+/* body > * {
   border: solid 1px rgb(239, 111, 243);
-}
+} */
 
-* > * > * > * {
+/* body > * > * {
   border: solid 1px rgb(80, 236, 184);
-}
+} */
 
-* > * > * > * > * {
+/* body > * > * > *  {
   border: solid 1px rgb(255, 99, 71);
-}
+} */
 
-* > * > * > * > * > * {
+/* body > * > * > * > * {
   border: solid 1px rgb(107, 142, 35);
 } */
 /* End: Testing Outline */
 
 /* Variables */
 :root {
-  --background-color: hsl(43, 18%, 92%);
+  --background-color: hsl(0, 0%, 100%);
   --text-color__primary: hsl(0, 0%, 11%);
+  --text-color__links: hsl(353, 86%, 49%);
 
   --font-size__title: 2.5rem;
   --font-size__subtitle: 1.5rem;
@@ -37,14 +37,18 @@
   :root {
     --background-color: hsl(0, 0%, 11%);
     --text-color__primary: hsl(43, 17%, 82%);
+
   }
 }
 
 /* For large screens */
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   :root {
     --font-size__title: 4rem;
     --font-size__subtitle: 2.5rem;
+  }
+  .wrapper {
+    max-width: 960px;
   }
 }
 
@@ -59,17 +63,55 @@ body {
 }
 
 .wrapper {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  /* padding: 0; */
+  padding: 0 2rem;
 
-  min-height: 100vh;
+  /* min-height: 100vh; */
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
+
+.navigation {
+  padding-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation__logo {
+}
+
+
+.navigation__link {
+  margin: 0;
+}
+
+.horizontal-links-list {
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  list-style: none;
+}
+
+.horizontal-links-list :not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+.horizontal-links-list > li a{
+  text-decoration: none;
+  
+  font-weight: bold;
+  color: var(--text-color__links);
+}
+
 
 .my-info__name {
   margin: 0;
@@ -78,10 +120,16 @@ body {
   text-align: center;
 }
 
-.my-info__email {
+.my-info__title {
   margin: 0;
 
   font-size: var(--font-size__subtitle);
   line-height: 1.33;
   text-align: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
