@@ -1,19 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Marlo Boticano</title>
-  <link rel="icon" type="image/png" href="images/shoe-icon.png">
+  <link rel="icon" type="image/png" href="images/shoeLogo__filled@128px.png">
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
   <div class="wrapper">
+
+    <nav class="navigation">
+      <img 
+        class="navigation__logo" role="image" aria-hidden="true" alt="my logo"
+        src="images/shoeLogo__filled@64px.png"
+      >
+
+      <ul class="navigation__links horizontal-links-list">
+        <li class="navigation__link"><a href="index.html">Work</a></li>
+        <li class="navigation__link"><a href="#">About</a></li>
+        <li class="navigation__link">
+          <a 
+            href="https://drive.google.com/file/d/1GPj5ibHj_sm-Tv_fkaMFb3E6t698ejvY/view"
+            target="_blank"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <div class="my-info">
       <p class="my-info__name">Marlo Boticano</p>
-      <p class="my-info__email">m.boticano@gmail.com</p>
+      <p class="my-info__title">Front End Developer</p>
     </div>
+
+    <div class="my-projects">
+      <div class="my-projects__project">
+        <div class="my-projects__thumbnail">
+          <a 
+            class="my-projects__thumbnail-link" 
+            href="https://mdboticano.github.io/ux-portfolio"
+            target="_blank"
+          >
+            <img 
+              class="my-projects__thumbnail-img"
+              src="images/ux-portfolio__thumbnail@360px.png"
+              alt="desktop view of my user experience portfolio"
+            >
+          </a>
+        </div>
+        <div class="my-projects__info">
+          <a
+            class="my-projects__title " 
+            href="https://mdboticano.github.io/ux-portfolio"
+            target="_blank"
+          >
+            UX Portfolio
+          </a>
+          <p class="my-projects__description">
+            I built my user research portfolio using React with Gatsby.
+          </p>
+        </div>
+      </div>
+    
+      <div class="my-projects__project">
+        <div class="my-projects__thumbnail">
+          <a 
+            class="my-projects__thumbnail-link" 
+            href="https://mdboticano.github.io/markdown-previewer"
+            target="_blank"
+          >
+            <img 
+              class="my-projects__thumbnail-img"
+              src="images/markdown-previewer__thumbnail@360px.png"
+              alt="desktop view of my markdown previewer"
+            >
+          </a>
+        </div>
+        <div class="my-projects__info">
+          <a
+            class="my-projects__title " 
+            href="https://mdboticano.github.io/markdown-previewer"
+            target="_blank"
+          >
+            Markdown Previewer
+          </a>
+          <p class="my-projects__description">
+            I created a live markdown previewer in React.
+          </p>
+        </div>
+      </div>
+
+      <div class="my-projects__project">
+        <div class="my-projects__thumbnail">
+          <a 
+            class="my-projects__thumbnail-link" 
+            href="https://mdboticano.github.io/frank-ocean-lyrics"
+            target="_blank"
+          >
+            <img 
+              class="my-projects__thumbnail-img"
+              src="images/frank-ocean-lyrics__thumbnail@360px.png"
+              alt="desktop view of my the lyrics viewer"
+            >
+          </a>
+        </div>
+        <div class="my-projects__info">
+          <a
+            class="my-projects__title " 
+            href="https://mdboticano.github.io/frank-ocean-lyrics"
+            target="_blank"
+          >
+            Frank Ocean Lyrics
+          </a>
+          <p class="my-projects__description">
+            Cycle through Frank Ocean & friends' popular song lyrics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="footer__email">m.boticano@gmail.com</p>
+      <ul class="footer__social-links horizontal-links-list">
+        <li>
+          <a href="https://www.linkedin.com/in/marlo-boticano" target="_blank">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.github.com/MDBoticano" target="_blank">
+            GitHub
+          </a>
+        <li>
+          <a href="https://www.twitter.com/MarloBoticano" target="_blank">
+            Twitter
+          </a>
+        </li>
+      </ul>
+    </footer>
+
   </div>
 </body>
+
 </html>

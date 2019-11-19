@@ -1,32 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
 
-
 /* Start: Testing Outline */
 /* HTML > Body > Elem */
-/* * > * > * {
+/* body > * {
   border: solid 1px rgb(239, 111, 243);
 }
 
-* > * > * > * {
+body > * > * {
   border: solid 1px rgb(80, 236, 184);
 }
 
-* > * > * > * > * {
+body > * > * > *  {
   border: solid 1px rgb(255, 99, 71);
 }
 
-* > * > * > * > * > * {
+body > * > * > * > * {
   border: solid 1px rgb(107, 142, 35);
 } */
 /* End: Testing Outline */
 
 /* Variables */
 :root {
-  --background-color: hsl(43, 18%, 92%);
+  --background-color: hsl(0, 0%, 100%);
   --text-color__primary: hsl(0, 0%, 11%);
+  --text-color__links: hsl(353, 86%, 49%);
 
   --font-size__title: 2.5rem;
   --font-size__subtitle: 1.5rem;
+  --font-size__body: 1rem;
 
   --font-family__headings: 'Overpass', sans-serif;
   --font-family__body: 'Overpass', sans-serif;
@@ -34,18 +35,10 @@
 
 /* Dark mode: modifies variable values */
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* :root {
     --background-color: hsl(0, 0%, 11%);
     --text-color__primary: hsl(43, 17%, 82%);
-  }
-}
-
-/* For large screens */
-@media (min-width: 900px) {
-  :root {
-    --font-size__title: 4rem;
-    --font-size__subtitle: 2.5rem;
-  }
+  } */
 }
 
 body {
@@ -58,17 +51,53 @@ body {
   font-family: var(--font-family__headings);
 }
 
-.wrapper {
-  margin: 0;
+.horizontal-links-list {
   padding: 0;
 
-  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  list-style: none;
+}
+
+.horizontal-links-list :not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  
+  font-weight: bold;
+  color: var(--text-color__links);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  max-width: 960px;
+
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
+}
+
+.navigation {
+  padding-top: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.navigation__link {
+  margin: 0;
 }
 
 .my-info__name {
@@ -78,10 +107,94 @@ body {
   text-align: center;
 }
 
-.my-info__email {
+.my-info__title {
   margin: 0;
 
   font-size: var(--font-size__subtitle);
   line-height: 1.33;
   text-align: center;
+}
+
+.my-projects__project {
+  padding: 2rem 0;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-content: center;
+}
+
+.my-projects__thumbnail-img {
+  max-width: 100%;
+}
+
+.my-projects__info {
+  margin: auto 1.5rem;
+}
+
+.my-projects__title {
+  font-size: 1.125rem;
+}
+
+.my-projects__description {
+  margin: 0;
+  margin-top: .25rem;
+}
+
+.footer {
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__email {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.footer__social-links {
+  margin: .5rem 0;
+}
+
+/* For small screens */
+@media (max-width: 425px){
+  .wrapper {
+    padding: 0 .5rem;
+  }
+
+  .navigation {
+    padding-top: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .my-info__name {
+    font-size: 1.5rem;
+  }
+
+  .my-info__title {
+    font-size: 1.25rem;
+  }
+
+  .my-projects__project {
+    grid-template-columns: 1fr;
+  }
+
+  .my-projects__info {
+    margin-top: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-projects__thumbnail {
+    display: flex;
+    justify-content: center;
+  }
+
+  .my-projects__description {
+    text-align: center;
+  }
 }
