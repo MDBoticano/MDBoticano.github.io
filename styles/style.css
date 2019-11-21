@@ -35,10 +35,10 @@ body > * > * > * > * {
 
 /* Dark mode: modifies variable values */
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* :root {
     --background-color: hsl(0, 0%, 11%);
     --text-color__primary: hsl(43, 17%, 82%);
-  }
+  } */
 }
 
 body {
@@ -77,7 +77,7 @@ a:hover {
 
 .wrapper {
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 
   max-width: 960px;
 
@@ -89,7 +89,7 @@ a:hover {
 }
 
 .navigation {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 
   display: flex;
   justify-content: space-between;
@@ -158,9 +158,23 @@ a:hover {
 }
 
 /* For small screens */
-@media (max-width: 480px){
+@media (max-width: 425px){
   .wrapper {
     padding: 0 .5rem;
+  }
+
+  .navigation {
+    padding-top: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .my-info__name {
+    font-size: 1.5rem;
+  }
+
+  .my-info__title {
+    font-size: 1.25rem;
   }
 
   .my-projects__project {
@@ -168,13 +182,19 @@ a:hover {
   }
 
   .my-projects__info {
+    margin-top: 0.5rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .my-projects__thumbnail {
+    display: flex;
+    justify-content: center;
   }
 
   .my-projects__description {
     text-align: center;
   }
 }
-
