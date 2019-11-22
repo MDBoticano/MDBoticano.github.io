@@ -41,9 +41,15 @@ body > * > * > * > * {
   } */
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
+  /* overflow-y: scroll; */
 
   background-color: var(--background-color);
   color: var(--text-color__primary);
@@ -77,9 +83,10 @@ a:hover {
 
 .wrapper {
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 4rem;
 
   max-width: 960px;
+  min-height: 100vh;
 
   box-sizing: border-box;
 
@@ -89,7 +96,7 @@ a:hover {
 }
 
 .navigation {
-  padding-top: 1.5rem;
+  padding-top: 2rem;
 
   display: flex;
   justify-content: space-between;
@@ -98,6 +105,7 @@ a:hover {
 
 .navigation__link {
   margin: 0;
+  font-size: 1.125rem;
 }
 
 .my-info__name {
@@ -140,6 +148,23 @@ a:hover {
   margin-top: .25rem;
 }
 
+.about-me {
+  flex: 1;
+}
+
+.about-me__intro {
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.about-me__text {
+  font-size: 1.125rem;
+}
+
+.about-me__email {
+  font-weight: bold;
+}
+
 .footer {
   padding: 1rem 0;
 
@@ -157,7 +182,7 @@ a:hover {
   margin: .5rem 0;
 }
 
-/* For small screens */
+/* Media queries: */
 @media (max-width: 425px){
   .wrapper {
     padding: 0 .5rem;
