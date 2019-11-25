@@ -123,6 +123,10 @@ a:hover {
   text-align: center;
 }
 
+.my-projects {
+  flex: 1;
+}
+
 .my-projects__project {
   padding: 2rem 0;
 
@@ -166,7 +170,7 @@ a:hover {
 }
 
 .footer {
-  padding: 1rem 0;
+  padding: 1rem 0 2rem;
 
   display: flex;
   flex-direction: column;
@@ -179,7 +183,7 @@ a:hover {
 }
 
 .footer__social-links {
-  margin: .5rem 0;
+  margin: .75rem 0;
 }
 
 /* Media queries: */
