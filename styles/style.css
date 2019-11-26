@@ -105,6 +105,10 @@ a:hover {
   align-items: center;
 }
 
+.navigation__logo {
+  height: 2rem;
+}
+
 .navigation__link {
   margin: 0;
   font-size: 1.125rem;
