@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
 
 /* Start: Testing Outline */
 /* HTML > Body > Elem */
@@ -21,7 +22,8 @@ body > * > * > * > * {
 
 /* Variables */
 :root {
-  --background-color: hsl(0, 0%, 100%);
+  --background-color__primary: hsl(0, 0%, 100%);
+  --background-color__secondary: hsl(215, 20%, 23%);
   --text-color__primary: hsl(0, 0%, 11%);
   --text-color__links: hsl(353, 86%, 49%);
 
@@ -29,8 +31,19 @@ body > * > * > * > * {
   --font-size__subtitle: 1.5rem;
   --font-size__body: 1rem;
 
-  --font-family__headings: 'Overpass', sans-serif;
+  /* --font-family__headings: 'Overpass', sans-serif; */
+  /* --font-family__body: 'Overpass', sans-serif; */
+
+  /* --font-family__headings: 'Rubik', sans-serif; */
+  /* --font-family__body: 'Rubik', sans-serif; */
+
+  --font-family__headings: 'Rubik', sans-serif;
   --font-family__body: 'Overpass', sans-serif;
+
+  /* --font-family__headings: sans-serif; 
+  --font-family__body: sans-serif; */
+
+  --wrapper__max-width: 840px;
 }
 
 /* Dark mode: modifies variable values */
@@ -51,10 +64,11 @@ body {
   padding: 0;
   /* overflow-y: scroll; */
 
-  background-color: var(--background-color);
+  background-color: var(--background-color__secondary);
   color: var(--text-color__primary);
 
-  font-family: var(--font-family__headings);
+  /* font-family: var(--font-family__headings); */
+  font-family: var(--font-family__body);
 }
 
 .horizontal-links-list {
@@ -73,7 +87,7 @@ body {
 a {
   text-decoration: none;
   
-  font-weight: bold;
+  font-weight: 600;
   color: var(--text-color__links);
 }
 
@@ -85,12 +99,12 @@ a:hover {
   box-sizing: border-box;
 
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 2.25rem;
 
-  max-width: 960px;
+  max-width: var(--wrapper__max-width);
   min-height: 100vh;
 
-  background-color: var(--background-color);
+  background-color: var(--background-color__primary);
 
   display: flex;
   flex-direction: column;
@@ -114,23 +128,25 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.my-info {
+  padding: 2rem 0;
+}
+
 .my-info__name {
   margin: 0;
   
+  font-family: var(--font-family__headings);
   font-size: var(--font-size__title);
   text-align: center;
 }
 
 .my-info__title {
-  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 
+  font-family: var(--font-family__headings);
   font-size: var(--font-size__subtitle);
-  line-height: 1.33;
   text-align: center;
-}
-
-.my-projects {
-  flex: 1;
 }
 
 .my-projects__project {
@@ -141,8 +157,14 @@ a:hover {
   align-content: center;
 }
 
+/* .my-projects__thumbnail {
+  padding-right: .375em;
+} */
+
 .my-projects__thumbnail-img {
   max-width: 100%;
+  /* outline: solid 2px rgb(80, 80, 80); */
+  /* box-shadow: .25em .25em 0 3px hsl(353, 100%, 87%); */
 }
 
 .my-projects__info {
@@ -150,7 +172,9 @@ a:hover {
 }
 
 .my-projects__title {
-  font-size: 1.125rem;
+  font-family: var(--font-family__headings);
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 
 .my-projects__description {
@@ -158,12 +182,10 @@ a:hover {
   margin-top: .25rem;
 }
 
-.about-me {
-  flex: 1;
-}
-
 .about-me__intro {
   text-align: center;
+
+  font-family: var(--font-family__headings);
   font-size: 1.75rem;
 }
 
@@ -172,7 +194,7 @@ a:hover {
 }
 
 .about-me__email {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .footer {
@@ -180,7 +202,9 @@ a:hover {
 
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .footer__email {
@@ -193,15 +217,20 @@ a:hover {
 }
 
 /* Media queries: */
-@media (max-width: 425px){
+@media (max-width: 320px) {
+  .horizontal-links-list :not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+
+@media (max-width: 425px) {
   .wrapper {
-    padding: 0 .5rem;
+    padding: 0 1.5rem;
   }
 
   .navigation {
     padding-top: 0.75rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
   .my-info__name {
@@ -209,7 +238,7 @@ a:hover {
   }
 
   .my-info__title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .my-projects__project {
