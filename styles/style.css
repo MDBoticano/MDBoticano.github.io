@@ -4,18 +4,22 @@
 /* Start: Testing Outline */
 /* HTML > Body > Elem */
 /* body > * {
+  box-sizing: border-box;
   border: solid 1px rgb(239, 111, 243);
 }
 
 body > * > * {
+  box-sizing: border-box;
   border: solid 1px rgb(80, 236, 184);
 }
 
 body > * > * > *  {
+  box-sizing: border-box;
   border: solid 1px rgb(255, 99, 71);
 }
 
 body > * > * > * > * {
+  box-sizing: border-box;
   border: solid 1px rgb(107, 142, 35);
 } */
 /* End: Testing Outline */
@@ -72,6 +76,7 @@ body {
 }
 
 .horizontal-links-list {
+  margin: 0;
   padding: 0;
 
   display: flex;
@@ -113,6 +118,7 @@ a:hover {
 
 .navigation {
   padding-top: 2rem;
+  padding-bottom: 1rem;
 
   display: flex;
   justify-content: space-between;
