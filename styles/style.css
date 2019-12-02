@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass:400,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Overpass:400,600&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap');
 
 /* Start: Testing Outline */
 /* HTML > Body > Elem */
@@ -27,35 +27,38 @@ body > * > * > * > * {
 /* Variables */
 :root {
   --background-color__primary: hsl(0, 0%, 98%);
-  /* --background-color__secondary: hsl(0, 0%, 91%); */
-  --background-color__secondary: hsl(243, 77%, 95%);
-  --text-color__primary: hsl(0, 0%, 11%);
+  --background-color__secondary: hsl(0, 0%, 98%);
+  --background-color__primary: hsl(0, 0%, 100%);
+  --background-color__secondary: hsl(0, 0%, 100%);
   --text-color__links: hsl(353, 86%, 49%);
+  --text-color__primary: hsl(0, 0%, 11%);
 
   --font-size__title: 2.5rem;
   --font-size__subtitle: 1.5rem;
   --font-size__body: 1rem;
 
-  /* --font-family__headings: 'Overpass', sans-serif; */
-  /* --font-family__body: 'Overpass', sans-serif; */
-
-  /* --font-family__headings: 'Rubik', sans-serif; */
-  /* --font-family__body: 'Rubik', sans-serif; */
+  /* --font-family__headings: 'Overpass', sans-serif;
+  --font-family__body: 'Overpass', sans-serif; */
 
   --font-family__headings: 'Rubik', sans-serif;
-  --font-family__body: 'Overpass', sans-serif;
+  --font-family__body: 'Rubik', sans-serif;
 
-  /* --font-family__headings: sans-serif; 
-  --font-family__body: sans-serif; */
+  /* --font-family__headings: 'Rubik', sans-serif;
+  --font-family__body: 'Overpass', sans-serif; */
+  /* --font-family__body: Helvetica, Arial, sans-serif; */
 
   --wrapper__max-width: 840px;
+
+  /* --background-img: url("../images/bg-red.png"); */
 }
 
 /* Dark mode: modifies variable values */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) { 
   /* :root {
-    --background-color: hsl(0, 0%, 11%);
-    --text-color__primary: hsl(43, 17%, 82%);
+    --background-color__primary: hsl(243, 77%, 11%);
+    --background-color__secondary: hsl(243, 77%, 5%);
+    --text-color__links: hsl(353, 86%, 49%);
+    --text-color__primary: hsl(0, 0%, 59%);
   } */
 }
 
@@ -69,8 +72,7 @@ body {
   padding: 0;
 
   background-color: var(--background-color__secondary);
-  /* background-image: url("../images/body-background.png"); */
-  background-image: url("../images/bg-purp.png");
+  background-image: var(--background-img);
   background-size: 240px 240px;
   color: var(--text-color__primary);
 
@@ -80,6 +82,7 @@ body {
 a {
   text-decoration: none;
   color: var(--text-color__links);
+  font-weight: 500;
 }
 
 a:hover {
@@ -96,7 +99,6 @@ a:hover {
   list-style: none;
 
   font-family: var(--font-family__headings);
-  /* font-weight: 400; */
 }
 
 .horizontal-links-list :not(:first-child) {
@@ -161,17 +163,14 @@ a:hover {
   padding: 2rem 0;
 
   display: grid;
+  grid-gap: 1rem;
   grid-template-columns: 40% 60%;
   align-content: center;
 }
 
-/* .my-projects__thumbnail {
-  padding-right: .375em;
-} */
-
 .my-projects__thumbnail-img {
   max-width: 100%;
-  outline: solid 2px rgb(80, 80, 80);
+  outline: solid 2px hsl(0, 0%, 31%);
   box-shadow: .25em .25em 0 3px hsl(353, 100%, 87%);
 }
 
@@ -199,10 +198,11 @@ a:hover {
 
 .about-me__text {
   font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .about-me__email {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .footer {
