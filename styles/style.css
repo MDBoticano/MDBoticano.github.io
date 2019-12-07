@@ -26,10 +26,8 @@ body > * > * > * > * {
 
 /* Variables */
 :root {
-  --background-color__primary: hsl(0, 0%, 98%);
-  --background-color__secondary: hsl(0, 0%, 98%);
   --background-color__primary: hsl(0, 0%, 100%);
-  --background-color__secondary: hsl(0, 0%, 100%);
+  --background-color__secondary: hsl(199, 68%, 94%);
   --text-color__links: hsl(353, 86%, 49%);
   --text-color__primary: hsl(0, 0%, 11%);
 
@@ -37,29 +35,10 @@ body > * > * > * > * {
   --font-size__subtitle: 1.5rem;
   --font-size__body: 1rem;
 
-  /* --font-family__headings: 'Overpass', sans-serif;
-  --font-family__body: 'Overpass', sans-serif; */
-
   --font-family__headings: 'Rubik', sans-serif;
   --font-family__body: 'Rubik', sans-serif;
 
-  /* --font-family__headings: 'Rubik', sans-serif;
-  --font-family__body: 'Overpass', sans-serif; */
-  /* --font-family__body: Helvetica, Arial, sans-serif; */
-
-  --wrapper__max-width: 840px;
-
-  /* --background-img: url("../images/bg-red.png"); */
-}
-
-/* Dark mode: modifies variable values */
-@media (prefers-color-scheme: dark) { 
-  /* :root {
-    --background-color__primary: hsl(243, 77%, 11%);
-    --background-color__secondary: hsl(243, 77%, 5%);
-    --text-color__links: hsl(353, 86%, 49%);
-    --text-color__primary: hsl(0, 0%, 59%);
-  } */
+  --wrapper__max-width: 860px;
 }
 
 html {
@@ -80,12 +59,12 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: var(--text-color__links);
-  font-weight: 500;
+  text-decoration: none;
 }
 
 a:hover {
+  color: var(--text-color__links);
   text-decoration: underline;
 }
 
@@ -109,7 +88,7 @@ a:hover {
   box-sizing: border-box;
 
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
 
   max-width: var(--wrapper__max-width);
   min-height: 100vh;
@@ -118,10 +97,12 @@ a:hover {
   flex-direction: column;
 
   background-color: var(--background-color__primary);
+
+  box-shadow: 5px 0px 20px rgba(0,0,0, .1);
 }
 
 .navigation {
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 
   display: flex;
@@ -133,13 +114,21 @@ a:hover {
   height: 2rem;
 }
 
-.navigation__link {
+.navigation__item-link {
   margin: 0;
-  font-size: 1.125rem;
+
+
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 60%);
+}
+
+.active-link {
+  color: var(--text-color__links);
 }
 
 .my-info {
-  padding: 2rem 0;
+  padding-top: 3rem;
 }
 
 .my-info__name {
@@ -159,6 +148,10 @@ a:hover {
   text-align: center;
 }
 
+.my-projects {
+  padding-top: 1rem;
+}
+
 .my-projects__project {
   padding: 2rem 0;
 
@@ -171,7 +164,12 @@ a:hover {
 .my-projects__thumbnail-img {
   max-width: 100%;
   outline: solid 2px hsl(0, 0%, 31%);
-  box-shadow: .25em .25em 0 3px hsl(353, 100%, 87%);
+
+  transition: transform .15s ease-in-out;
+}
+
+.my-projects__thumbnail-img:hover {
+  transform: scale(1.025);
 }
 
 .my-projects__info {
@@ -182,11 +180,16 @@ a:hover {
   font-family: var(--font-family__headings);
   font-weight: 400;
   font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: hsl(0, 0%, 15%);
 }
 
 .my-projects__description {
   margin: 0;
-  margin-top: .25rem;
+  margin-top: .5rem;
+  
+  line-height: 1.5rem;
+  color: hsl(0, 0%, 30%);
 }
 
 .about-me__intro {
